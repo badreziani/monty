@@ -8,22 +8,18 @@
 void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *node;
-	stack_t *current;
 	char *token = NULL;
 
 	token = strtok(NULL, " \n");
-	printf("{%s}\n", token);
-	current = *head;
-	node = malloc(sizeof(stack_t));
-	if (node == NULL)
+	if (!token)
+		exit(1);
+	if (is_int(token))
 	{
-		printf("Error\n");
-		exit(0);
+		node = add_to_stack(stack, atoi(token));
+		if (!node)
+		{
+			printf("%u", line_number);
+			exit(1);
+		}
 	}
-	if (current)
-		current->prev = node;
-	node->n = n;
-	node->next = *head;
-	node->prev = NULL;
-	*head = node;
 }
