@@ -10,6 +10,7 @@ void push(stack_t **stack, unsigned int line_number)
 	stack_t *node;
 	char *token = NULL;
 
+	(void) line_number;
 	token = strtok(NULL, " \n");
 	if (!token)
 		exit(1);
@@ -18,7 +19,6 @@ void push(stack_t **stack, unsigned int line_number)
 		node = add_to_stack(stack, atoi(token));
 		if (!node)
 		{
-			printf("%u", line_number);
 			exit(1);
 		}
 	}
