@@ -25,6 +25,7 @@ stack_t *add_to_stack(stack_t **head, const int n)
 		}
 		new->prev = node;
 		node->next = new;
+		*head = new;
 	}
 	else
 		*head = new;

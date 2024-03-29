@@ -12,6 +12,7 @@ void (*get_op(char *line))(stack_t **stack, unsigned int line_number)
 	struct instruction_s ops[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
 		{NULL, NULL}
 	};
 
